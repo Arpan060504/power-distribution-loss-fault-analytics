@@ -1,0 +1,8 @@
+load_type_id,load_category,typical_pf_min,typical_pf_max,harmonic_profile,sensitivity_level,description
+LOAD_IND_PROC,Industrial Process,0.82,0.89,"THD-I 8-12% (VFDs, Thyristors)",High,"Continuous assembly lines, machining, and material handling systems"
+LOAD_IND_MOT,Induction Motors,0.72,0.82,THD-I 5-8% (Direct-on-line motors),Medium,"Large 3-phase induction motors, blowers, cooling pumps, and compressors"
+LOAD_RES,Residential,0.91,0.96,"THD-I 12-18% (SMPS, LED lighting, Electronics)",Low,"Township residential quarters, domestic appliances, air conditioners"
+LOAD_COMM,Commercial & Institutional,0.88,0.96,"THD-I 10-15% (Data servers, HVAC chillers)",Very High,"IT data center, hospital critical infrastructure, office buildings"
+LOAD_LIGHT,Lighting & Municipal,0.85,0.92,"THD-I 15-22% (Discharge lamps, electronic drivers)",Low,"High-mast highway illumination, street lighting, municipal aeration"
+LOAD_AUX,Auxiliary Utilities,0.83,0.89,THD-I 6-10%,Medium,"Cooling towers, air compressors, auxiliary water pumps, substation station supply"
+LOAD_AGRI,Agricultural Irrigation,0.74,0.82,THD-I 6-9% (Borewell pumps),Low,"Rural tube-wells, lift irrigation pumps, grain processing mills"

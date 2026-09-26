@@ -1,0 +1,3 @@
+substation_id,substation_name,region,incoming_voltage_kv,bus_configuration,total_capacity_mva,commissioned_year,latitude,longitude
+SUB_NORTH,North Metro 33/11 kV Distribution Substation,Industrial Corridor - North,33.0,Double Bus with Bus Coupler,20.0,2018,28.7041,77.1025
+SUB_SOUTH,South Heavy Process 33/11 kV Distribution Substation,Industrial & Harbor Zone - South,33.0,Main and Transfer Bus,30.0,2015,28.5355,77.241

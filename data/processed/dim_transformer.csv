@@ -1,0 +1,6 @@
+transformer_id,substation_id,transformer_name,rated_mva,primary_voltage_kv,secondary_voltage_kv,vector_group,impedance_pct,no_load_loss_kw,full_load_loss_kw,cooling_type,rated_secondary_current_a
+TR_01,SUB_NORTH,TR-1 (North Area Primary),10.0,33.0,11.0,Dyn11,6.5,8.5,62.0,ONAN,524.9
+TR_02,SUB_NORTH,TR-2 (North Area Commercial/Urban),10.0,33.0,11.0,Dyn11,6.5,8.5,62.0,ONAN,524.9
+TR_03,SUB_SOUTH,TR-3 (South Heavy Industrial),12.5,33.0,11.0,Dyn11,7.0,11.2,78.0,ONAF,656.1
+TR_04,SUB_SOUTH,TR-4 (South Continuous Process),12.5,33.0,11.0,Dyn11,7.0,11.2,78.0,ONAF,656.1
+TR_05,SUB_SOUTH,TR-5 (South Auxiliary & Rural),5.0,33.0,11.0,Dyn11,5.75,5.0,36.0,ONAN,262.4

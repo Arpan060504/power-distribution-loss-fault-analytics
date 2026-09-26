@@ -1,0 +1,13 @@
+feeder_id,feeder_code,transformer_id,substation_id,feeder_name,load_type_id,load_category,length_km,conductor_type,resistance_ohm_per_km,reactance_ohm_per_km,total_resistance_ohm,rated_current_a,nominal_voltage_v,baseline_current_a,base_pf,phase_imbalance_base
+FDR_01,F-IND-01,TR_01,SUB_NORTH,Automotive Assembly & Machining Feeder,LOAD_IND_PROC,Industrial Process,3.2,ACSR Dog (100 mm²),0.2792,0.315,0.8934,250.0,11000.0,150.0,0.86,3.2
+FDR_02,F-MOT-02,TR_01,SUB_NORTH,Heavy Pumping Station & Induction Drives,LOAD_IND_MOT,Induction Motors,2.5,XLPE 185 mm² Underground Cable,0.16,0.11,0.4,300.0,11000.0,195.0,0.76,2.8
+FDR_03,F-RES-03,TR_01,SUB_NORTH,Residential Staff Township Feeder,LOAD_RES,Residential,4.0,ACSR Rabbit (50 mm²),0.5449,0.335,2.1796,150.0,11000.0,85.0,0.94,6.8
+FDR_04,F-COM-04,TR_02,SUB_NORTH,IT Tech Park & Commercial Complex Feeder,LOAD_COMM,Commercial & IT,1.8,XLPE 240 mm² Cable,0.125,0.105,0.225,350.0,11000.0,220.0,0.9,4.1
+FDR_05,F-MUN-05,TR_02,SUB_NORTH,Water Treatment & Expressway Lighting Feeder,LOAD_LIGHT,Lighting & Municipal,5.2,ACSR Dog (100 mm²),0.2792,0.315,1.4518,200.0,11000.0,105.0,0.88,5.5
+FDR_06,F-SUB-06,TR_02,SUB_NORTH,Suburban Periphery Mixed Feeder,LOAD_RES,Residential Mixed,6.8,ACSR Rabbit (50 mm²),0.5449,0.335,3.7053,140.0,11000.0,78.0,0.91,7.2
+FDR_07,F-MET-07,TR_03,SUB_SOUTH,Steel Rolling Mill & Arc Furnace Feeder,LOAD_IND_PROC,Heavy Industrial,2.2,Copper 300 mm² Busway / Cable,0.0818,0.095,0.18,480.0,11000.0,340.0,0.81,9.5
+FDR_08,F-CHM-08,TR_03,SUB_SOUTH,Petrochemical Continuous Plant Feeder,LOAD_IND_PROC,Continuous Chemical,3.0,XLPE 185 mm² Cable,0.16,0.11,0.48,320.0,11000.0,260.0,0.87,2.4
+FDR_09,F-REF-09,TR_04,SUB_SOUTH,Harbor Cold Storage & Cryogenics Feeder,LOAD_IND_MOT,Refrigeration & Compressors,3.6,ACSR Dog (100 mm²),0.2792,0.315,1.0051,240.0,11000.0,165.0,0.77,3.5
+FDR_10,F-AUX-10,TR_04,SUB_SOUTH,Industrial Park Utility & Cooling Tower Feeder,LOAD_AUX,Auxiliary Utilities,1.6,XLPE 150 mm² Cable,0.206,0.115,0.3296,220.0,11000.0,130.0,0.85,3.0
+FDR_11,F-HSP-11,TR_04,SUB_SOUTH,Metro Regional Hospital & Trauma Feeder,LOAD_COMM,Institutional Critical,2.1,Dual XLPE 240 mm² Cable,0.0625,0.0525,0.1312,280.0,11000.0,170.0,0.95,2.1
+FDR_12,F-AGR-12,TR_05,SUB_SOUTH,Rural Agricultural & Lift Irrigation Feeder,LOAD_AGRI,Agricultural Irrigation,8.5,ACSR Weasel (30 mm²),0.91,0.355,7.735,120.0,11000.0,72.0,0.79,8.0

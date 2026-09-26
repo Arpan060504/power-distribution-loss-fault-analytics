@@ -1,0 +1,8 @@
+fault_type_id,fault_name,category,default_severity,standard_action,ieee_code
+FLT_OVERCURRENT,Feeder Overcurrent,Thermal/Load,High,"Check line loading, trip breaker 50/51, inspect load redistribution",50/51
+FLT_UNDERVOLT,Voltage Sag / Undervoltage,Power Quality,Medium,"Inspect tap changer (OLTC), check reactive power deficit, capacitor bank status",27
+FLT_OVERVOLT,Voltage Swell / Overvoltage,Power Quality,Medium,"Inspect grid incoming voltage, switch off surplus capacitor banks, check OLTC step",59
+FLT_IMBALANCE,Severe Phase Current Imbalance,Unbalance,High,"Audit single-phase branch connections, rotate single-phase taps, rebalance phases",46
+FLT_TR_OVERLOAD,Transformer Thermal Overload,Asset Health,Critical,"Engage ONAF forced cooling, shed non-critical feeders, review MVA load duration curve",49
+FLT_EQUIP_OVERHEAT,Equipment / Cable Termination Hotspot,Thermal,High,"Perform thermography inspection, torque busbar bolted joints, inspect cable lugs",49T
+FLT_EARTH_LEAKAGE,Transient Earth Fault / High Resistance Fault,Insulation,Critical,"Line patrol for vegetation contact, test insulator surge arresters, megger cable insulation",50N/51N
