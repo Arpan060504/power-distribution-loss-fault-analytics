@@ -37,7 +37,7 @@
 Electric utility distribution systems form the final critical link delivering power from high-voltage transmission grids to industrial plants, commercial complexes, and domestic consumers. However, distribution networks operate with the highest rate of technical energy dissipation and equipment failure in the power value chain.
 
 This project delivers a complete **Data Analyst / Analytics Engineering workflow**:
-$$\text{Raw Telemetry} \longrightarrow \text{Data Quality Engine} \longrightarrow \text{Feature Engineering} \longrightarrow \text{Relational SQL (Star Schema)} \longrightarrow \text{Statistical & ML Anomaly Detection} \longrightarrow \text{Operations Dashboard / BI Export} \longrightarrow \text{Operational Decisions}$$
+$$\text{Raw Telemetry} \longrightarrow \text{Data Quality Engine} \longrightarrow \text{Feature Engineering} \longrightarrow \text{Relational SQL (Star Schema)} \longrightarrow \text{Statistical \& ML Anomaly Detection} \longrightarrow \text{Operations Dashboard / BI Export} \longrightarrow \text{Operational Decisions}$$
 
 Rather than relying on arbitrary random numbers, every single metric ($V, I, P, Q, S, PF, \Delta V_{\%}, I_{imb}, P_{loss}, T_{equip}$) is governed by **first-principles electrical physics**, cable impedance schedules, and international standards (IEEE Std 1159, IEEE Std 141, IEC 60038).
 
