@@ -1,12 +1,12 @@
 # ⚡ Power Distribution Loss & Fault Analytics System
 
-[![Python Version](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
-[![Database](https://img.shields.io/badge/Database-SQLite%20%7C%20PostgreSQL-lightgrey.svg)](https://sqlite.org)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
+[![Database](https://img.shields.io/badge/Database-SQLite-lightgrey.svg)](https://sqlite.org)
 [![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit%20%7C%20Plotly-ff4b4b.svg)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Domain](https://img.shields.io/badge/Domain-Electrical%20Power%20Systems-darkgreen.svg)](#)
 
-> An enterprise, portfolio-grade analytics platform bridging **Electrical Engineering domain physics** with modern **Data Analytics and BI workflows**. Ingests, validates, models, and diagnoses 104,000+ SCADA/AMI measurements across a dual-substation, 12-feeder distribution network to identify technical conductor losses, phase unbalance, power factor non-compliance, and protection relay operations.
+> An enterprise, portfolio-grade analytics platform bridging **Electrical Engineering domain physics** with modern **Data Analytics and BI workflows**. Ingests, validates, models, and diagnoses 104,000+ simulated SCADA/AMI measurements across a dual-substation, 12-feeder distribution network to identify technical conductor losses, phase unbalance, power factor non-compliance, and protection relay operations.
 
 ---
 
@@ -37,7 +37,7 @@
 Electric utility distribution systems form the final critical link delivering power from high-voltage transmission grids to industrial plants, commercial complexes, and domestic consumers. However, distribution networks operate with the highest rate of technical energy dissipation and equipment failure in the power value chain.
 
 This project delivers a complete **Data Analyst / Analytics Engineering workflow**:
-$$\text{Raw Telemetry} \longrightarrow \text{Data Quality Engine} \longrightarrow \text{Feature Engineering} \longrightarrow \text{Relational SQL (Star Schema)} \longrightarrow \text{Statistical & ML Anomaly Detection} \longrightarrow \text{Power BI Dashboard} \longrightarrow \text{Operational Decisions}$$
+$$\text{Raw Telemetry} \longrightarrow \text{Data Quality Engine} \longrightarrow \text{Feature Engineering} \longrightarrow \text{Relational SQL (Star Schema)} \longrightarrow \text{Statistical & ML Anomaly Detection} \longrightarrow \text{Operations Dashboard / BI Export} \longrightarrow \text{Operational Decisions}$$
 
 Rather than relying on arbitrary random numbers, every single metric ($V, I, P, Q, S, PF, \Delta V_{\%}, I_{imb}, P_{loss}, T_{equip}$) is governed by **first-principles electrical physics**, cable impedance schedules, and international standards (IEEE Std 1159, IEEE Std 141, IEC 60038).
 
@@ -46,8 +46,8 @@ Rather than relying on arbitrary random numbers, every single metric ($V, I, P, 
 ## 2. Problem Statement & Operational Context
 
 Distribution utilities operate under intense commercial and reliability pressures:
-* **Conductor Losses ($I^2R$ Dissipation):** Overloaded feeders and long overhead lines lose between 4% and 10% of total transmitted energy as wasted heat.
-* **Low Power Factor ($PF < 0.85$):** Uncompensated inductive motor loads draw excessive reactive magnetizing current ($kVAR$), inflating line current and incurring severe utility tariff surcharges.
+* **Conductor Losses ($I^2R$ Dissipation):** Higher feeder current increases conductor losses according to the I²R relationship; the project uses feeder-specific resistance and simulated operating conditions to quantify this effect.
+* **Low Power Factor ($PF < 0.85$):** Uncompensated inductive motor loads draw excessive reactive magnetizing current ($kVAR$), inflating line current and which can increase reactive-power demand and may lead to tariff penalties depending on the applicable utility agreement.
 * **Phase Current Imbalance:** Asymmetrical single-phase service taps cause circulating neutral currents, premature transformer core heating, and negative-sequence motor braking.
 * **Transformer Over- & Under-Utilization:** Some substation transformers suffer chronic thermal overloads while adjacent units remain severely under-utilized.
 * **Unscheduled Relay Outages:** Unmonitored thermal hotspots and transient overcurrents culminate in sudden breaker trips, escalating System Average Interruption Duration Indices (SAIDI).
@@ -111,7 +111,7 @@ Distribution utilities operate under intense commercial and reliability pressure
  ┌─────────────────────────────────────────────────────────────┐
  │ 5. OPERATIONS DASHBOARD & RECOMMENDATION ENGINE             │
  │    • Streamlit + Plotly Multi-Tab Executive Operations App   │
- │    • Dynamic Insights Derived Directly from Data (No Fakes) │
+ │    • Dynamic Insights Derived Directly from the available dataset │
  │    • Rule-Based Explainable Maintenance Recommendations     │
  └─────────────────────────────────────────────────────────────┘
 ==================================================================================================
@@ -150,9 +150,9 @@ Incoming 33 kV Utility Grid Supply
 
 ---
 
-### 5.2 Real Industrial Benchmark: Reliance Industries Limited (RIL) Substation 600-30
+### 5.2 Real Industrial Benchmark: RIL Substation 600-30
 
-To ground this system in authentic industrial reality, the project integrates real telemetry collected during an electrical engineering internship at a major **Reliance Industries Limited (RIL) Refinery & Petrochemical Complex**:
+To ground the synthetic network model in industrial context, the project includes a separate case study based on field measurements collected during an electrical engineering internship at a **Reliance Industries Limited (RIL) refinery/petrochemical facility**. The synthetic network dataset and the RIL field-study measurements are kept conceptually separate:
 
 * **Substation 600-30 (6.6 kV Medium Voltage Switchboard):**
   * **Bus Bar A:** Fed by Main Incomer A8 (390 A, PF 0.82), supplying 2 MVA step-down transformers (600-03A, 600-05A, 600-06A, 652-01A), Refinery Tank Farm (RTF) vapor recovery compressor motors (M701A/C), GAIL gas pipeline incomers, and staff township housing runs up to 3.6 km.
@@ -163,7 +163,7 @@ To ground this system in authentic industrial reality, the project integrates re
 #### Key Industrial Telemetry Findings from RIL Data:
 1. **Low-Voltage High-Current Conductor Loss Paradox:** At 415 V, product loading pumps drawing 195 A to 218 A over 350 to 550 meters of 150 mm² XLPE cable experience **between 6.0% and 9.66% technical copper loss**. This empirically illustrates why industrial facilities utilize 6.6 kV medium voltage for distribution across large acreage.
 2. **Phase Current Imbalance (IEEE Std 141):** Feeder B7 (SW BD 600-10B) recorded an 8.61% current imbalance ($I_r=42\text{A}, I_y=37\text{A}, I_b=37\text{A}$), while Feeder B8 recorded 7.85% unbalance.
-3. **Incomer Loading Imbalance:** Bus A operated at 390 A (0.82 PF lagging), while Bus B operated at 190 A (0.965 PF lagging), revealing a clear opportunity for bus coupler load transfer.
+3. **Incomer Loading Imbalance:** Bus A operated at 390 A (0.82 PF lagging), while Bus B operated at 190 A (0.965 PF lagging), providing a basis for investigating bus/load-transfer options subject to protection, loading, and operational constraints.
 
 ---
 
@@ -303,9 +303,9 @@ Following Section 13 guidelines, the model predicts whether a feeder will experi
 
 ---
 
-## 12. Operations Dashboard (Streamlit & Power BI Ready)
+## 12. Operations Dashboard (Streamlit + Power BI Ready)
 
-The web dashboard (`dashboard/app.py`) provides an interactive SCADA Operations Center featuring:
+The Streamlit dashboard (`dashboard/app.py`) provides an interactive SCADA-style Operations Center featuring:
 
 * **Executive Overview (Tab 1):** 7 landing KPI cards, system load vs loss timeline, active vs reactive power scatter, transformer loading gauges.
 * **Feeder Loss & Performance (Tab 2):** Scorecard table with conditional ranking, empirical $P_{loss} \propto I^2$ verification, diurnal loss heatmap.
@@ -313,7 +313,7 @@ The web dashboard (`dashboard/app.py`) provides an interactive SCADA Operations 
 * **Fault Analytics (Tab 4):** Incident breakdown by type, transparent severity score distribution, feeder fault concentration, monthly trends.
 * **Dual Anomaly Detection (Tab 5):** Consensus pie chart, statistical attribution breakdown, interactive feeder time-series drill-down with anomaly markers.
 * **Maintenance Intelligence (Tab 6):** Dynamic analytical insights, rule-based recommendation queue with expected ROI and payback horizons.
-* **Power BI Data Model & Export (Tab 7):** Enterprise Star Schema diagram, copy-paste DAX formulas, and export folder paths.
+* **Power BI Data Model & Export (Tab 7):** Enterprise Star Schema diagram, export-ready CSV tables, and analytical model guidance.
 
 ---
 
@@ -324,8 +324,8 @@ All insights are dynamically calculated from the live dataset (zero hardcoding):
 1. **Highest Technical Loss Feeder:** Feeder `FDR_12` (Rural Agricultural line) exhibits the highest loss percentage at **8.42%** (averaging 7.74 $\Omega$ line resistance over 8.5 km), followed by `FDR_06` (Suburban Mixed) at **4.15%**.
 2. **Joule's Law Verification:** Quadratic regression of feeder loss against current yields $R^2 = 0.992$, proving that peak-demand loading is overwhelmingly responsible for network line dissipation.
 3. **Chronic Phase Imbalance:** Feeder `FDR_07` (Heavy Steel & Arc Furnace) showed an average current imbalance of **9.5%** with peaks of **21.4%**, far exceeding the IEEE Std 141 5% recommendation.
-4. **Power Factor Penalties:** Feeder `FDR_02` (Induction Motors) and `FDR_09` (Harbor Cold Storage) operated below 0.85 PF for **over 70% of the observation period**, incurring continuous commercial tariff surcharges.
-5. **Transformer Thermal Stress:** Transformer `TR_03` reached a peak loading of **114.2%** during summer heatwaves, while `TR_05` averaged only **32.8%** utilization, indicating clear opportunities for load transfer.
+4. **Power Factor Penalties:** Feeder `FDR_02` (Induction Motors) and `FDR_09` (Harbor Cold Storage) operated below 0.85 PF for **over 70% of the observation period**, creating potential exposure to commercial power-factor penalties depending on the applicable tariff structure.
+5. **Transformer Thermal Stress:** Transformer `TR_03` reached a peak loading of **114.2%** during summer heatwaves, while `TR_05` averaged only **32.8%** utilization, indicating a condition that can be investigated for load-transfer or reconfiguration options.
 
 ---
 
@@ -344,7 +344,7 @@ The system features an automated, rule-based recommendation engine:
 
 ## 15. Limitations
 
-* **Synthetic Data:** While generated using strict electrical laws and conductor impedance schedules, real field SCADA data would reflect additional unpredictable harmonics and weather events.
+* **Synthetic Network Dataset:** The main 104k+ measurement dataset is simulated using electrical relationships and conductor impedance assumptions. It should not be represented as real utility SCADA data.
 * **Balanced Line Drop Approximation:** Voltage drops are modeled using lumped resistance and inductive reactance; full AC optimal power flow (AC-OPF) via Newton-Raphson was omitted for dashboard execution speed.
 * **Transient Fault Resolution:** Sub-cycle protection waveforms (16.6 ms oscillography) are not captured; measurements are aggregated at standard 30-minute AMI intervals.
 
@@ -362,8 +362,8 @@ The system features an automated, rule-based recommendation engine:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/power-distribution-analytics.git
-cd power-distribution-analytics
+git clone https://github.com/Arpan060504/power-distribution-loss-fault-analytics.git
+cd power-distribution-loss-fault-analytics
 ```
 
 ### 2. Set Up Virtual Environment & Dependencies
