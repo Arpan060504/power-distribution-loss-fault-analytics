@@ -277,8 +277,14 @@ The **Data Quality Engine** (`src/data_validation/validator.py`) caught and sani
 The system implements a dual-method consensus architecture (`src/anomaly_detection/detector.py`):
 
 1. **Method 1 — Statistical Engine (Z-Score & IQR):**
-   * Computes feeder-normalized Z-scores ($|Z| > 3.0$) on $I, V, P_{loss\%}, T_{equip}, I_{imb}$.
-   * **Explainability:** Automatically tags each anomaly with an explicit cause (e.g., *"Current Spike (Z=3.8); Thermal Hotspot (Z=3.1)"*).
+   * Computes feeder-normalized Z-scores with an anomaly threshold of **|Z| > 3.0** across:
+     - Current (`I`)
+     - Voltage (`V`)
+     - Feeder loss percentage (`P_loss%`)
+     - Equipment temperature (`T_equip`)
+     - Phase-current imbalance (`I_imb`)
+   * **Explainability:** Each detected anomaly is associated with an interpretable physical cause, such as **Current Spike** or **Thermal Hotspot**, along with the corresponding Z-score.
+
 2. **Method 2 — Machine Learning Engine (Multivariate Isolation Forest):**
    * Isolates subtle multi-dimensional anomalies ($n=100$ trees, contamination=0.015) that single-parameter thresholds miss.
 3. **Consensus Classification:**
