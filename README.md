@@ -37,9 +37,12 @@
 Electric utility distribution systems form the final critical link delivering power from high-voltage transmission grids to industrial plants, commercial complexes, and domestic consumers. However, distribution networks operate with the highest rate of technical energy dissipation and equipment failure in the power value chain.
 
 This project delivers a complete **Data Analyst / Analytics Engineering workflow**:
-$$\text{Raw Telemetry} \longrightarrow \text{Data Quality Engine} \longrightarrow \text{Feature Engineering} \longrightarrow \text{Relational SQL (Star Schema)} \longrightarrow \text{Statistical \& ML Anomaly Detection} \longrightarrow \text{Operations Dashboard / BI Export} \longrightarrow \text{Operational Decisions}$$
 
-Rather than relying on arbitrary random numbers, every single metric ($V, I, P, Q, S, PF, \Delta V_{\%}, I_{imb}, P_{loss}, T_{equip}$) is governed by **first-principles electrical physics**, cable impedance schedules, and international standards (IEEE Std 1159, IEEE Std 141, IEC 60038).
+**Raw Telemetry → Data Quality Engine → Feature Engineering → Relational SQL (Star Schema) → Statistical & ML Anomaly Detection → Operations Dashboard / BI Export → Operational Decisions**
+
+Rather than relying on arbitrary random numbers, the project derives its core electrical metrics from **first-principles electrical relationships**, feeder-specific cable impedance parameters, and documented engineering thresholds.
+
+The primary metrics include **voltage (V), current (I), active power (P), reactive power (Q), apparent power (S), power factor (PF), voltage deviation, phase-current imbalance, feeder technical loss, and equipment temperature**.
 
 ---
 
